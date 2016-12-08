@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingListAddComponent implements OnInit {
 
+  borrando: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  delete(){
+    console.log('Borrando');
+    this.borrando = true;
   }
 
 }

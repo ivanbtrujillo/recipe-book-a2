@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="{{selectedRecipe?.imagePath}}" alt="" class="img-responsive">
+    <img src="{{selectedRecipe?.imagePath}}" alt="" style="max-height: 200px;" class="img-responsive">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <p>{{selectedRecipe?.name}}</p>
+    <h1>{{selectedRecipe?.name}}</h1>
   </div>
   <div class="col-xs-12">
-    <button class="btn btn-success">To Shopping List</button>
+    <button class="btn btn-success" (click)='onAddToShoppingList()'>To Shopping List</button>
     <button class="btn btn-primary">Edit</button>
     <button class="btn btn-danger">Delete</button>
   </div>
@@ -21,6 +21,11 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Ingredients
+    <h2>Ingredients</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of selectedRecipe?.ingredients">
+        {{ingredient.name}} - {{ingredient.amount}}
+      </li>
+    </ul>
   </div>
 </div>
